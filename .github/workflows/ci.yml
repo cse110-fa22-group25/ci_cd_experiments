@@ -23,6 +23,6 @@ jobs:
 
       - name: Run Unit tests
         run: |
-          npm install
+          npm install --save-dev jest
           npx test
           
