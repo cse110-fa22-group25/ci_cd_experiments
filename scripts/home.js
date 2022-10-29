@@ -9,6 +9,12 @@ function init() {
 
 button.addEventListener("click", (e) => {
     localStorage.setItem("a", "b");
+    let tmp = document.getElementById("wassup");
+    if (tmp.textContent == "waassup") {
+        tmp.textContent = "I need sleep";
+    } else {
+        tmp.textContent = "waassup";
+    }
 })
 
 button2.addEventListener("click", (e) => {
@@ -16,6 +22,6 @@ button2.addEventListener("click", (e) => {
     localStorage.clear();
 });
 
-export function add(a, b) {
+function add(a, b) {
     return a + b;
 }
