@@ -1,27 +1,22 @@
 window.addEventListener("DOMContentLoaded", init);
-var body = document.querySelector("body");
-var button = body.getElementsByTagName("button").item(0);
-var button2 = body.getElementsByTagName("button").item(1);
 
-function init() {
-    console.log("hi");
+if (window.localStorage.getItem("cnt") === null) {
+    window.localStorage.setItem("cnt", 0);
 }
 
-button.addEventListener("click", (e) => {
-    localStorage.setItem("a", "b");
-    let tmp = document.getElementById("wassup");
-    if (tmp.textContent == "waassup") {
-        tmp.textContent = "I need sleep";
-    } else {
-        tmp.textContent = "waassup";
-    }
-})
+var cnt = Number(window.localStorage.getItem("cnt"));
 
-button2.addEventListener("click", (e) => {
-    console.log(localStorage.length);
-    localStorage.clear();
-});
+function init() {
 
-function add(a, b) {
-    return a + b;
+    var inc_btn = document.getElementById("inc-btn");
+
+    var inc_dis = document.getElementById("inc-dis");
+
+    inc_dis.textContent = cnt;
+
+    inc_btn.addEventListener("click", (event) => {
+        cnt++;
+        window.localStorage.setItem("cnt", cnt);
+        inc_dis.textContent = cnt;
+    });
 }
