@@ -1,0 +1,25 @@
+{
+  "name": "experiment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cse110-fa22-group25/experiments.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cse110-fa22-group25/experiments/issues"
+  },
+  "homepage": "https://github.com/cse110-fa22-group25/experiments#readme",
+  "devDependencies": {
+    "jest": "^29.2.2"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
