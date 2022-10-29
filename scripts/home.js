@@ -1,7 +1,7 @@
 window.addEventListener("DOMContentLoaded", init);
-export var body = document.querySelector("body");
-export var button = body.getElementsByTagName("button").item(0);
-export var button2 = body.getElementsByTagName("button").item(1);
+var body = document.querySelector("body");
+var button = body.getElementsByTagName("button").item(0);
+var button2 = body.getElementsByTagName("button").item(1);
 
 function init() {
     console.log("hi");
