@@ -35,3 +35,9 @@ jobs:
           output_dir: ./docs
           config_file: jsdoc.json
           template: minami
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./docs
