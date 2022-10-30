@@ -28,6 +28,7 @@ jobs:
       - name: Run test
         run:
           npm test
-          
       - name: document
         run: npm run doc
+        with:
+          output_dir: ./docs
