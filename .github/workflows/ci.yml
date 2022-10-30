@@ -21,16 +21,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install jest
+      - name: Install stuff
         run:
           npm install --save-dev jest
+          npm install --save-dev jsdoc
       - name: Run test
         run:
           npm test
           
-      - name: Build
-        uses: andstor/jsdoc-action@v1
-        with:
-          source_dir: .
-          recurse: true
-          output_dir: ./docs
+      - name: document
+        run: npm run doc
