@@ -28,13 +28,13 @@ jobs:
       - name: Run test
         run:
           npm test
-      - name: document
-        uses: andstor/jsdoc-action@v1
-        with:
-          source_dir: .
-          output_dir: ./docs
-          config_file: jsdoc.json
-          template: minami
-      - name: Add & Commit
-        uses: EndBug/add-and-commit@v9.1.1
+      # - name: document
+      #   uses: andstor/jsdoc-action@v1
+      #   with:
+      #     source_dir: .
+      #     output_dir: ./docs
+      #     config_file: jsdoc.json
+      #     template: minami
+      # - name: Add & Commit
+      #   uses: EndBug/add-and-commit@v9.1.1
 
