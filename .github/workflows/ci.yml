@@ -29,6 +29,8 @@ jobs:
         run:
           npm test
       - name: document
-        run: npm run doc
+        uses: andstor/jsdoc-action@v1
         with:
           output_dir: ./docs
+          config_file: jsdoc.json
+          template: minami
