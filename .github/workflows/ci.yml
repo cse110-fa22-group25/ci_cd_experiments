@@ -28,7 +28,7 @@ jobs:
         run:
           npm test
       - name: Run linter/style
-        run: eslint . --ext .js,.jsx,.ts,.tsx
+        run: npx eslint ./scripts ./__tests__ --ext .js,.jsx,.ts,.tsx
       - name: Generate docs
         run:
           npm run doc
