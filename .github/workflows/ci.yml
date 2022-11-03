@@ -23,8 +23,7 @@ jobs:
 
       - name: Install stuff
         run:
-          npm install --save-dev jest
-          npm install --save-dev jsdoc
+          npm install
       - name: Unit tests
         run:
           npm test
