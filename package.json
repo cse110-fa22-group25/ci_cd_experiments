@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/cse110-fa22-group25/experiments#readme",
   "devDependencies": {
+    "eslint": "^8.26.0",
     "install": "^0.13.0",
     "jest": "^29.2.2",
     "jsdoc": "^3.6.11",

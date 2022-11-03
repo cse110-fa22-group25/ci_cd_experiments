@@ -25,10 +25,12 @@ jobs:
         run:
           npm install --save-dev jest
           npm install --save-dev jsdoc
-      - name: Run test
+      - name: Unit tests
         run:
           npm test
-      - name: document
+      - name: Run linter/style
+        run: eslint . --ext .js,.jsx,.ts,.tsx
+      - name: Generate docs
         run:
           npm run doc
       - uses: stefanzweifel/git-auto-commit-action@v4
