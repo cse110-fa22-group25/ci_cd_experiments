@@ -7,7 +7,7 @@ if (window.localStorage.getItem("cnt") === null) {
 let cnt = Number(window.localStorage.getItem("cnt"));
 
 /**
- * Initialize page after load
+ * Initialize page after load -- test change
  */
 function init() {
   const incBtn = document.getElementById("inc-btn");
