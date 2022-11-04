@@ -1,25 +1,21 @@
 window.addEventListener("DOMContentLoaded", init);
 
 if (window.localStorage.getItem("cnt") === null) {
-    window.localStorage.setItem("cnt", 0);
+  window.localStorage.setItem("cnt", 0);
 }
 
-var cnt = Number(window.localStorage.getItem("cnt"));
+let cnt = Number(window.localStorage.getItem("cnt"));
 
 /**
- * Initialize page after load
+ * Initialize page after load -- test change
  */
 function init() {
-
-    var inc_btn = document.getElementById("inc-btn");
-
-    var inc_dis = document.getElementById("inc-dis");
-
-    inc_dis.textContent = cnt;
-
-    inc_btn.addEventListener("click", (event) => {
-        cnt++;
-        window.localStorage.setItem("cnt", cnt);
-        inc_dis.textContent = cnt;
-    });
+  const incBtn = document.getElementById("inc-btn");
+  const incDis = document.getElementById("inc-dis");
+  incDis.textContent = cnt;
+  incBtn.addEventListener("click", () => {
+    cnt++;
+    window.localStorage.setItem("cnt", cnt);
+    incDis.textContent = cnt;
+  });
 }
