@@ -16,40 +16,92 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  unit_test:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
 
       - name: Install stuff
         run:
-          npm install
-      - name: Unit tests
+          npm install --save-dev jest
+          npm install --save-dev jsdoc
+      - name: Run test
         run:
           npm test
-  
-  linter:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Install stuff
-        run:
-          npm install
-      - name: Run Linter
-          npx eslint ./scripts ./__tests__ --ext .js,.jsx,.ts,.tsx
-  
-  generate_docs:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      
-      - name: Install stuff
-        run:
-          npm install
-      - name: Generate docs
+      - name: document
         run:
           npm run doc
       - uses: stefanzweifel/git-auto-commit-action@v4
+  
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install stuff
+        run:
+          npm install --save-dev jest
+          npm install --save-dev jsdoc
+      - name: Run test
+        run:
+          npm test
+      - name: document
+        run:
+          npm run doc
+      - uses: stefanzweifel/git-auto-commit-action@v4
+
+  docgen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install stuff
+        run:
+          npm install --save-dev jest
+          npm install --save-dev jsdoc
+      - name: Run test
+        run:
+          npm test
+      - name: document
+        run:
+          npm run doc
+      - uses: stefanzweifel/git-auto-commit-action@v4
+
+
+  # unit_test:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+
+  #     - name: Install stuff
+  #       run:
+  #         npm install
+  #     - name: Unit tests
+  #       run:
+  #         npm test
+  
+  # linter:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+
+  #     - name: Install stuff
+  #       run:
+  #         npm install
+  #     - name: Run Linter
+  #         npx eslint ./scripts ./__tests__ --ext .js,.jsx,.ts,.tsx
+  
+  # generate_docs:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+
+  #     - name: Install stuff
+  #       run:
+  #         npm install
+  #     - name: Generate docs
+  #       run:
+  #         npm run doc
+  #     - uses: stefanzweifel/git-auto-commit-action@v4
 
 
